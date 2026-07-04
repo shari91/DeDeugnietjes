@@ -1,0 +1,97 @@
+:root {
+  /* Brand palette (voorheen theme.ts) */
+  --color-primary: #f3874c; /* oranje */
+  --color-secondary: #fbc34d; /* licht oranje */
+  --color-tertiary: #008e87; /* groen */
+  --color-light: #b6dcc3; /* licht groen */
+  --color-dark: #000000;
+  --color-white: #ffffff;
+
+  /* Typografie */
+  --font-body: 'Century Gothic', Verdana, sans-serif;
+  --font-display: 'Rockies', 'Century Gothic', sans-serif;
+
+  /* Layout */
+  --nav-height: 70px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Achtergrond op volledige breedte, verticaal onder elkaar herhaald.
+     (background-size: cover zou één tegel over het hele scherm uitrekken;
+     100% auto houdt de breedte gelijk aan het venster en laat repeat-y tegelen.) */
+  background-image: url('./artwork/Background.svg');
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Subtiele scrollbar in huisstijl voor eventuele binnen-scrollgebieden */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* De pagina zelf krijgt géén native scrollbar (geen witte baan naast de
+   kleurvlakken, geen layout-sprong). Een overlay-indicator neemt het over. */
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Overlay-scrollbar: enkel zichtbaar tijdens het scrollen (zie scrollbar.ts) */
+.overlayScrollbar {
+  position: fixed;
+  top: 0;
+  right: 3px;
+  width: 8px;
+  height: 100vh;
+  z-index: 400;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.overlayScrollbar.isVisible {
+  opacity: 1;
+}
+.overlayScrollbarThumb {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 6px;
+  border-radius: 6px;
+  background-color: var(--color-tertiary);
+}

@@ -1,0 +1,42 @@
+.footer {
+  background-color: var(--color-white);
+  padding: 20px;
+  color: var(--color-dark);
+  text-align: center;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.copyright {
+  background-color: var(--color-tertiary);
+  color: var(--color-white);
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.brand {
+  display: block;
+  width: 100%;
+  max-width: 475px;
+  height: auto;
+  margin: 0 auto 12px;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 100px;
+  margin: 20px;
+}
+
+.link {
+  color: var(--color-dark);
+}
+

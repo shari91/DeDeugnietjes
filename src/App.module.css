@@ -1,0 +1,8 @@
+.app {
+  min-height: 100vh;
+}
+
+/* Anker-offset zodat secties niet onder de vaste navigatie verdwijnen */
+.section {
+  scroll-margin-top: var(--nav-height);
+}
